@@ -1,0 +1,18 @@
+/* Estilo para botões */
+button {
+    background-color: #008CBA; /* Cor de fundo */
+    border: none; /* Remove bordas */
+    color: white; /* Cor do texto */
+    padding: 15px 32px; /* Espaçamento interno */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Remove sublinhado */
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer; /* Muda o cursor para um ponteiro quando você passa o mouse sobre */
+}
+
+/* Estilo para botões quando o mouse passa sobre */
+button:hover {
+    background-color: #007B9A; /* Cor de fundo */
+}

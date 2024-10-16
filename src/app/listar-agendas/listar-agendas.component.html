@@ -1,0 +1,38 @@
+<h2 class="text-center">Lista de Agendas</h2>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Título do Serviço</th>
+                <th>Telefone</th>
+                <th>Email</th>
+                <th>Data e Hora de Início</th>
+                <th>Data e Hora de Fim</th>
+                <th>Observação</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let agenda of agendas">
+                <td>{{ agenda.codigo }}</td>
+                <td>{{ agenda.titulo_do_servico }}</td>
+                <td>{{ agenda.telefone }}</td>
+                <td>{{ agenda.email }}</td>
+                <td>{{ agenda.data_e_hora_inicio | date: 'dd/MM/yyyy HH:mm' }}</td>
+                <td>{{ agenda.data_e_hora_fim | date: 'dd/MM/yyyy HH:mm' }}</td>
+                <td>{{ agenda.observacao }}</td>
+
+                <td>
+                    <button (click)="alterarAgendamento(agenda.codigo)" class="btn btn-info" style="margin-left: 10px;">Alterar</button>
+                    <button (click)="excluirAgendamento(agenda.codigo)" class="btn btn-danger" style="margin-left: 10px;">Excluir</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+
+    <button (click)="inserirAgendamento()" class="btn btn-info" style="margin-left: 10px;">Inserir Novo Agendamento</button>
+    <button (click)="retornar()" class="btn btn-success" style="margin-left: 10px;">Voltar</button>
+</div>
