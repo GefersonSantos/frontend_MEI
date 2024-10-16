@@ -1,15 +1,14 @@
-<h2 class="text-center">Lista de Agendas</h2>
+<h2 class="text-center">Lista de Servicos</h2>
 <div class="container">
     <table class="table table-striped">
         <thead>
             <tr>
                 <th>Código</th>
                 <th>Título do Serviço</th>
-                <th>Telefone</th>
-                <th>Email</th>
-                <th>Data e Hora de Início</th>
-                <th>Data e Hora de Fim</th>
-                <th>Observação</th>
+                <th>Valor</th>
+                <th>Status</th>
+                <th>Descrição</th>
+                <th>Ações</th>
             </tr>
         </thead>
 
@@ -18,13 +17,14 @@
               <th scope="row">{{ servico.codigo }}</th>
               <td>{{ servico.tituloServico }}</td>
               <!-- Substitua com o nome do cliente quando disponível -->
-              <td>Nome</td>
+
               <td>{{ servico.valorServico | currency:'BRL' }}</td>
               <td>{{ servico.status }}</td>
               <td>{{ servico.descricaoServico }}</td>
+              <!-- <td>{{servico.}}</td> -->
                 <td>
-                  <button type="button" class="btn btn-warning" (click)="alterarServico(servico.codigo)">Editar</button>
-                  <button type="button" class="btn btn-danger" (click)="excluirServico(servico.codigo)">Remover</button>
+                  <button class="btn btn-info" style="margin-left: 10px;"(click)="alterarServico(servico.codigo)">Alterar</button>
+                  <button type="button" class="btn btn-danger" (click)="excluirServico(servico.codigo)">Excluir</button>
                 </td>
             </tr>
         </tbody>

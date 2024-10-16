@@ -4,7 +4,7 @@ import { ServicoService } from '../services/servico.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-listar-servico',
+  selector: 'app-listar-servicos',
   templateUrl: './listar-servico.component.html',
   styleUrls: ['./listar-servico.component.css']
 })
@@ -42,7 +42,7 @@ export class ListarServicoComponent implements OnInit{
   }
 
   retornar() {
-    this.router.navigate(['listar-servico']);
+    this.router.navigate(['inicio']);
   }
 
 }

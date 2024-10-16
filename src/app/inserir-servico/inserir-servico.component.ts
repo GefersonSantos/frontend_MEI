@@ -19,7 +19,7 @@ export class InserirServicoComponent implements OnInit {
   }
 
   retornar() {
-    this.router.navigate(['listar-servico']);
+    this.router.navigate(['listar-servicos']);
   }
 
   onSubmit() {

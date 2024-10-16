@@ -23,7 +23,7 @@ export class EditarServicoComponent {
   }
 
   retornar(): void {
-    this.router.navigate(['listar-servico']);
+    this.router.navigate(['listar-servicos']);
   }
 
   onSubmit() {
