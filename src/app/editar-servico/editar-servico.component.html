@@ -49,16 +49,18 @@
           <div class="col-4">
               <label for="descricaoServico">Descrição</label>
               <textarea id="descricaoServico" class="form-control" rows="3" placeholder="Descrição do serviço..." [(ngModel)]="servico.descricaoServico" name="descricaoServico" required></textarea>
+              <!-- <div *ngIf="serviceForm.submitted && !serviceForm.form.controls.descricaoServico?.valid" class="text-danger">
+                  Descrição é obrigatória.
+              </div> -->
           </div>
       </div>
 
       <br>
       <div class="form-group row">
           <div class="col-4">
-              <button type="submit" class="btn btn-info">Cadastrar</button>
+              <button type="submit" class="btn btn-info">Salvar</button>
               <button class="btn btn-success" (click)="retornar()" style="margin-left: 10px;">Cancelar</button>
           </div>
       </div>
   </form>
 </div>
-
