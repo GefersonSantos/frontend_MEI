@@ -1,49 +1,48 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Servico } from '../model/servico';
 import { ServicoService } from '../services/servico.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-listar-servico',
+  selector: 'app-listar-servicos',
   templateUrl: './listar-servico.component.html',
   styleUrls: ['./listar-servico.component.css']
 })
-export class ListarServicosComponent implements OnInit {
-
+export class ListarServicoComponent implements OnInit{
 
   servicos!: Servico[];
 
-  constructor(private ServicoService: ServicoService, private router: Router) { }
+  constructor(private servicoService: ServicoService, private router: Router) { }
 
   ngOnInit(): void {
-
-    this.listarServicos();
-
+      this.listarServico();
   }
-  private listarServicos() {
-    this.ServicoService.listarServicos().subscribe(data => {
-      this.servicos = data;
 
+  private listarServico() {
+    this.servicoService.listarServico().subscribe(data => {
+      this.servicos = data;
     });
   }
 
   excluirServico(codigo: number) {
-    if (confirm("Deseja excluir o Serviço?")) {
-      this.ServicoService.excluirServico(codigo).subscribe(data => {
+    if(confirm("Deseja realmente excluir?")){
+      this.servicoService.excluirServico(codigo).subscribe(data => {
         console.log(data);
-        this.listarServicos();
+        this.listarServico();
       })
     }
   }
-  
-  inserirServico() {
-    this.router.navigate(['inserir-servico'])
+
+  incluirServico() {
+    this.router.navigate(['inserir-servico']);
   }
 
   alterarServico(codigo: number) {
-    this.router.navigate(['alterar-servico', codigo])
+    this.router.navigate(['editar-servico', codigo]);
   }
-  Retornar() {
-    this.router.navigate(['inicio'])
+
+  retornar() {
+    this.router.navigate(['inicio']);
   }
+
 }

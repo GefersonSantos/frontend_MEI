@@ -1,15 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ListarServicosComponent } from './listar-servico.component';
 
-describe('ListarServicosComponent', () => {
-  let component: ListarServicosComponent;
-  let fixture: ComponentFixture<ListarServicosComponent>;
+import { ListarServicoComponent } from './listar-servico.component';
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [ListarServicosComponent]
-    });
-    fixture = TestBed.createComponent(ListarServicosComponent);
+describe('ListarServicoComponent', () => {
+  let component: ListarServicoComponent;
+  let fixture: ComponentFixture<ListarServicoComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [ListarServicoComponent]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(ListarServicoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

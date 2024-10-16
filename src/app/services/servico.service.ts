@@ -13,20 +13,20 @@ export class ServicoService {
 
   constructor(private httpClient: HttpClient) { }
 
-  //Listar 
-  listarServicos(): Observable<Servico[]> {
-    return this.httpClient.get<Servico[]>(`${this.url}`);
+  //Listar
+  listarServico(): Observable<any[]> {
+    return this.httpClient.get<any[]>(this.url);
   }
 
 
   //Incluir
-  incluirServico(servico: Servico): Observable<Object> {
-    return this.httpClient.post(`${this.url}`, servico);
+  incluirServico(dados: Servico): Observable<Object> {
+    return this.httpClient.post(this.url, dados);
   }
 
   //Alterar
-  alterarServico(codigo :number, servico: Servico): Observable<Object> {
-    return this.httpClient.put(`${this.url}/${codigo}`, servico);
+  alterarServico(codigo: number, dados: Servico): Observable<Object> {
+    return this.httpClient.put(`${this.url}/${codigo}`, dados);
   }
 
   //Excluir
@@ -35,7 +35,7 @@ export class ServicoService {
   }
 
   //Consultar
-  consultarServico(codigo: number): Observable<Servico> {
-    return this.httpClient.get<Servico>(`${this.url}/${codigo}`);
+  consultarServico(codigo: number): Observable<any> {
+    return this.httpClient.get(`${this.url}/${codigo}`);
   }
 }
